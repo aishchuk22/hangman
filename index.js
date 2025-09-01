@@ -33,8 +33,14 @@ while (remainingLetters !== 0 && lives !== 0) {
     let correctGuess = false;
 
     for (let i = 0; i < word.length; i++) {
-      if (word[i] === guess) {
-        answerArray[i] = guess;
+      if (answerArray[i] === guess.toLowerCase()) {
+        alert("This letter is already guessed. Try a new one");
+        correctGuess = true;
+        break;
+      }
+
+      if (word[i] === guess.toLowerCase()) {
+        answerArray[i] = guess.toLowerCase();
         remainingLetters--;
         correctGuess = true;
       }
